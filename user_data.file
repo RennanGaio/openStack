@@ -1,3 +1,10 @@
-#!/bin/bash
-cd ~/
-bash run_all.sh
+#!/usr/bin/env bash
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf;
+echo "127.0.0.1 teste2" >> /etc/hosts;
+cd /home/ubuntu/openStack
+git pull
+pip install -r requirements.txt
+cd servers
+python simple-server.py &
+sudo python clientUsr.py &
+python clientBus.py &
