@@ -81,7 +81,7 @@ class RegistrationForm(Form):
 
 
 #depois de logado o usuario devera mandar a requisicao de sua localizacao com o seu tipo q recebeu no login
-@app.route('/ususario', methods=['GET', 'POST'])
+@app.route('/usuario', methods=['GET', 'POST'])
 def indexUser():
     #return 'Hello, World!'
     error = None
