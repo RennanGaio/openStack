@@ -107,8 +107,8 @@ def indexBus():
 	if request.method == 'GET':
 		#bus_data is a list of touples [[bus_stop1, usr_type1], [bus_stop2, usr_type2], ...]
 		#get_user_info will return a list of near bus_stops sinalizeds
-		bus_data=get_usr_info(request.form['bus_number'], request.form['bus_location'])
-		return bus_data
+		# bus_data=get_usr_info(request.form['bus_number'], request.form['bus_location'])
+		return request.form['bus_number']
 
 
 if __name__ == '__main__':
