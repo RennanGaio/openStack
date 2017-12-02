@@ -104,13 +104,15 @@ def indexUser():
 #essa sera a url acessada pelos onibus periodicamente para verificarem se ouve atualizacao.
 @app.route('/bus', methods=['GET', 'POST'])
 def indexBus():
-	if request.method == 'GET':
-		#bus_data is a list of touples [[bus_stop1, usr_type1], [bus_stop2, usr_type2], ...]
-		#get_user_info will return a list of near bus_stops sinalizeds
-		bus_data=get_usr_info(request.form['bus_number'], request.form['bus_location'])
-		return bus_data
+    if request.method == 'GET':
+        #bus_data is a list of touples [[bus_stop1, usr_type1], [bus_stop2, usr_type2], ...]
+        #get_user_info will return a list of near bus_stops sinalizeds
+        bus_data=get_usr_info(request.form['bus_number'], request.form['bus_location'])
+    else:
+        pass
+
 
 
 if __name__ == '__main__':
 
-    app.run(host='0.0.0.0', port='5000',debug=False)
+    app.run(host='0.0.0.0', port='3000',debug=False)
